@@ -1,0 +1,1 @@
+将FcfrtMvpActivity框架模板复制在Android Studio 安装包下面的\plugins\android\lib\templates\activities\下

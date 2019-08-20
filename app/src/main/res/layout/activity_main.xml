@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/w_match_h_match">
+    <TextView
+            android:id="@+id/tv_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="FcfrtMvp支持一键创建MVP框架。使用了RxHttp请求框架，作为本mvp的请求框架，MVP框架仅提供了一个基础的框架，如用到项目中自己扩展，如有疑问"
+            android:textSize="@dimen/font_size_40px"/>
+    <EditText
+            android:id="@+id/et_text"
+            style="@style/w_wrap_h_wrap"
+            android:hint="請輸入ip地址"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/space_20"
+            android:text="63.223.108.42"/>
+    <Button
+            android:id="@+id/bt_get"
+            style="@style/w_wrap_h_wrap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/et_text"
+            android:layout_marginLeft="@dimen/space_20"
+            android:text="GET請求"/>
+    <Button
+            android:id="@+id/bt_post"
+            style="@style/w_wrap_h_wrap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="@dimen/space_20"
+            app:layout_constraintLeft_toRightOf="@+id/bt_get"
+            android:text="POST請求"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

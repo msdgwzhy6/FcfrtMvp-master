@@ -1,0 +1,62 @@
+ext {
+
+    android = [
+            compileSdkVersion       : 29,
+            buildToolsVersion       : "29.0.1",
+            minSdkVersion           : 15,
+            targetSdkVersion        : 29,
+            versionCode             : 1,
+            versionName             : "1.0"
+    ]
+
+    version = [
+            //support
+            "kotlin-stdlib-jdk7"    :"1.3.41",
+            "core-ktx"              :"1.0.2",
+            "junit"                 :"4.12",
+            "runner"                :"1.2.0",
+            "espresso-core"         :"3.2.0",
+            //support
+            "appcompat"             :"1.0.2",
+            "constraintlayout"      :"1.1.3",
+            "cardview"              :"1.0.0",
+            "design"                :"28.0.0",
+            "multidex"              :"1.0.3",
+            "recyclerview"          :"1.0.0",//:"1.1.0-beta01",
+            //rxhttp
+            "rxhttp"                :"1.1.5",
+            "rxhttp-compiler"       :"1.1.5",
+            "rxlife-x"              :"1.0.9",
+            "litepal"               :"3.0.0",
+            "glide"                 :"3.7.0"
+
+    ]
+
+    dependencies = [
+            //kotlin
+            "kotlin-stdlib-jdk7"     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${version["kotlin-stdlib-jdk7"]}",
+            "core-ktx"               :"androidx.core:core-ktx:${version["core-ktx"]}",
+            "junit"                  :"junit:junit:${version["junit"]}",
+            "runner"                 :"androidx.test:runner:${version["runner"]}",
+            "espresso-core"          :"androidx.test.espresso:espresso-core:${version["espresso-core"]}",
+            //support
+            "appcompat"              :"androidx.appcompat:appcompat:${version["appcompat"]}",
+            "constraintlayout"       :"androidx.constraintlayout:constraintlayout:${version["constraintlayout"]}",
+            "recyclerview"           :"androidx.recyclerview:recyclerview:${version["recyclerview"]}",
+            "cardview"               :"androidx.cardview:cardview:${version["cardview"]}",
+            "design"                 :"com.android.support:design:${version["design"]}",
+            "multidex"               :"com.android.support:multidex:${version["multidex"]}",// Dex分包，解决 65k 问题
+
+            //rxhttp
+            "rxhttp"                 :"com.rxjava.rxhttp:rxhttp:${version["rxhttp"]}",
+            "rxhttp-compiler"        :"com.rxjava.rxhttp:rxhttp-compiler:${version["rxhttp-compiler"]}", //注解处理器，生成RxHttp类
+            "rxlife"                 :"com.rxjava.rxlife:rxlife-x:${version["rxlife-x"]}",
+            //litepal
+            "litepal"                :"org.litepal.android:java:${version["litepal"]}",
+            "glide"                  :"com.github.bumptech.glide:glide:${version["glide"]}",
+
+    ]
+
+
+}
+ 

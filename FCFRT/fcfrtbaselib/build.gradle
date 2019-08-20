@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["kotlin-stdlib-jdk7"]
+    implementation rootProject.ext.dependencies["appcompat"]
+    implementation rootProject.ext.dependencies["core-ktx"]
+    testImplementation rootProject.ext.dependencies["junit"]
+    implementation rootProject.ext.dependencies["recyclerview"]
+    androidTestImplementation rootProject.ext.dependencies["runner"]
+    androidTestImplementation rootProject.ext.dependencies["espresso-core"]
+
+    api (rootProject.ext.dependencies["rxhttp"]){
+        exclude group: "com.squareup.okhttp3"
+    }
+    implementation 'com.squareup.okhttp3:okhttp:3.12.3' //此版本最低要求 API 9
+    kapt rootProject.ext.dependencies["rxhttp-compiler"] //注解处理器，生成RxHttp类
+    api rootProject.ext.dependencies["rxlife"]
+    // Dex分包，解决 65k 问题
+    api rootProject.ext.dependencies["multidex"]
+
+
+
+
+
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FcfrtBaseLib</string>
+
+    <string name="network_error">Currently no network, please check your network Settings</string>
+    <string name="notify_no_network">Network connection unavailable, please try again later!</string>
+    <string name="time_out_please_try_again_later">Connection timeout, please try again later!</string>
+    <string name="esky_service_exception">Network not geili, please try again later!</string>
+
+</resources>

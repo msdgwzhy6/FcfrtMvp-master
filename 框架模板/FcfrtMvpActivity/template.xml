@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="FcfrtMvp Activity"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a new Fcfrt activity">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="activityClass"
+        name="Activity Name"
+        type="string"
+        constraints="nonempty"
+        default="Main"
+        help="The name of the activity class to create" />
+   <parameter
+        id="activityClassModule"
+        name="Activity Module"
+        type="string"
+        constraints="nonempty"
+        default="main"
+        help="The Module of the activity class to create" />
+    <parameter
+        id="activityClassAnnotation"
+        name="Activity Annotation"
+        type="string"
+        constraints="nonempty"
+        default="Class Annotation"
+        help="The Annotation of the activity class to create" />
+    <parameter
+        id="activityClassAuthor"
+        name="Activity Author"
+        type="string"
+        constraints="nonempty"
+        default="Class Author"
+        help="The Author of the activity class to create" />
+   <parameter
+        id="isFcfrtBaseAndBase"
+        name="FcfrtBaseActivity And BaseActivity "
+        type="boolean"
+        default="true"
+        help="If true, it will be FcfrtActivty or BaseActivity" />
+    <parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="activity_main"
+        visibility="generateLayout"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="needActivity"
+        name="Generate Activity"
+        type="boolean"
+        default="true"
+        help="If true, a activity file will be generated manifest" />
+    <parameter
+        id="isLauncher"
+        name="Launcher Activity"
+        type="boolean"
+        default="false"
+        visibility="needActivity"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.fcfrt.myapp" />
+
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
