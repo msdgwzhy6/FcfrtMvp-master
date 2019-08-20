@@ -49,7 +49,7 @@ FcfrtMvp+RxHttp+RxJava（Kotlin和JAVA共用完美支持）支持一键创建MVP
 
 
 
-**【RxHttp详细使用教程】(https://github.com/liujingxing/RxHttp)**
+**[RxHttp详细使用教程](https://github.com/liujingxing/RxHttp)**
 
 
 
