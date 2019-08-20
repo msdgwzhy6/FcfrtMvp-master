@@ -34,7 +34,7 @@ FcfrtMvp+RxHttp+RxJava（Kotlin和JAVA共用完美支持）支持一键创建MVP
 
 
 
-## 接下来导入我们提供的demo中demo中的根包名处点击new->Activity->FcfrtMvp
+## 接下来导入我们提供的demo中的根包名处点击new->Activity->FcfrtMvp
 
 ![image](https://github.com/FCFRT/FcfrtMvp-master/blob/master/img/创建Activity.png)
 
