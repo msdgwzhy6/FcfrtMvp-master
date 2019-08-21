@@ -91,7 +91,9 @@ FcfrtMvp+RxHttp+RxJava（Kotlin和JAVA共用完美支持）支持一键创建MVP
             android:textSize="@dimen/font_size_40px"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-我们在框架类加入了布局样式及尺寸像素和字体大小模板
+我们在框架类加入了布局样式及尺寸像素和字体大小模板，让代码更整洁，开发效率更高，例如：
+字体大小设置：android:textSize="@dimen/font_size_40px" 代表字体：20sp
+布局左边距：android:layout_marginLeft="@dimen/space_20"代表左边距：10dp
 
 **使用FcfrtMvp框架中的权限一句话搞定**
 ```java
