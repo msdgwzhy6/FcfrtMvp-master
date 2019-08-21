@@ -7,6 +7,9 @@ import android.content.Intent
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.fcfrt.baselib.base.FcfrtBaseActivity
+import com.fcfrt.baselib.utils.granted.FcfrtPermission
+import com.fcfrt.baselib.utils.granted.FcfrtPermissionListener
+import com.fcfrt.baselib.utils.granted.FcfrtPermissionsUtil
 import com.fcfrt.demo.mvp.bean.Address
 import com.fcfrt.demo.mvp.main.contract.CMain
 import com.fcfrt.demo.mvp.main.presenter.PMainImpl
@@ -40,6 +43,23 @@ class MainActivity : FcfrtBaseActivity<PMainImpl>(), CMain.IVMain {
 
     override fun onViewCreated() {
         bt_get.setOnClickListener {
+            FcfrtPermissionsUtil.requestPermission(this,object :FcfrtPermissionListener{
+                /**
+                 * 通过授权
+                 * @param permission
+                 */
+                override fun permissionGranted(permission: Array<out String>) {
+                    showToast("授权成功")
+                }
+
+                /**
+                 * 拒绝授权
+                 * @param permission
+                 */
+                override fun permissionDenied(permission: Array<out String>) {
+                    showToast("授权失败")
+                }
+            },*FcfrtPermission.Group.STORAGE)
             mPresenter?.getIpInfo(et_text.text.toString())
         }
         bt_post.setOnClickListener {
